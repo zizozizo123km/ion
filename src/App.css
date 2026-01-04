@@ -1,0 +1,87 @@
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Base Styles for Netflix Theme */
+
+html {
+  /* Default font stack optimized for both LTR and RTL (Arabic) */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Standard Netflix background color */
+  background-color: #141414;
+  color: #fff;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow caused by dynamic elements */
+}
+
+/* Root container settings */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Scrollbar Styling (Dark and Sleek) */
+
+/* Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #0d0d0d;
+}
+
+/* Utility classes for handling text overflow (Crucial for movie titles) */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* Custom component utility: Focus indicator removal (Netflix style) */
+.no-ring:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Custom transitions for smoother UI interaction (used with Framer Motion) */
+.transition-default {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Ease-in-out standard */
+}
+
+/* Ensures images are sharp and maintain aspect ratio */
+img {
+  object-fit: cover;
+}
